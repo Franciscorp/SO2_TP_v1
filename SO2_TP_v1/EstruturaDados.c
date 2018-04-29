@@ -16,6 +16,17 @@
 //MINHA ALTERAÇAO
 >>>>>>> Macgab
 
+
+
+
+
+
+//ISTO e PARA O MASTER XICO
+
+
+
+
+
 typedef struct {
 	int posX;//canto superior esquerdo do qual começa a posicao
 	int posY;
