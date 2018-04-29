@@ -9,7 +9,12 @@
 #include <fcntl.h>
 //#define _CRT_SECURE_NO_WARNINGS
 
+<<<<<<< HEAD
 //teste FRP
+=======
+
+//MINHA ALTERAÇAO
+>>>>>>> Macgab
 
 typedef struct {
 	int posX;//canto superior esquerdo do qual começa a posicao
