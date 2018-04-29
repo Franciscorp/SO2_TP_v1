@@ -9,7 +9,7 @@
 #include <fcntl.h>
 //#define _CRT_SECURE_NO_WARNINGS
 
-
+//teste FRP
 
 typedef struct {
 	int posX;//canto superior esquerdo do qual começa a posicao
