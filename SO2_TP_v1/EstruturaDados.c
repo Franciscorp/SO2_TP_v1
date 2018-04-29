@@ -10,6 +10,7 @@
 //#define _CRT_SECURE_NO_WARNINGS
 
 
+//MINHA ALTERAÇAO
 
 typedef struct {
 	int posX;//canto superior esquerdo do qual começa a posicao
