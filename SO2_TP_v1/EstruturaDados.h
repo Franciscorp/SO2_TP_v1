@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 #pragma once
+=======
+>>>>>>> master
 #define _UNICODE//tem haver com outras bibliotecas que vao buscar esta
 #define UNICODE//por as duas pelo sim pelo nao
 #include <time.h>

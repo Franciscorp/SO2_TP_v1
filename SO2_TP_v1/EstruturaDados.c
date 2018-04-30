@@ -15,6 +15,20 @@
 
 //MINHA ALTERAÇAO
 >>>>>>> Macgab
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+//ISTO e PARA O MASTER XICO
+
+
+
+
+>>>>>>> master
 
 typedef struct {
 	int posX;//canto superior esquerdo do qual começa a posicao
