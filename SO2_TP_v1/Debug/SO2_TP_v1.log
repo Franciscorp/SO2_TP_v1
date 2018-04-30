@@ -3,5 +3,7 @@ c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\so2_tp_v1\estrutu
   c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\so2_tp_v1\estruturadados.h(1): note: command-line arguments:  see previous definition of '_UNICODE'
 c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\so2_tp_v1\estruturadados.h(2): warning C4005: 'UNICODE': macro redefinition
   c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\so2_tp_v1\estruturadados.h(2): note: command-line arguments:  see previous definition of 'UNICODE'
-  SO2_TP_v1.vcxproj -> C:\Users\franc\documents\visual studio 2015\Projects\SO2_TP_v1\Debug\SO2_TP_v1.exe
-  SO2_TP_v1.vcxproj -> C:\Users\franc\documents\visual studio 2015\Projects\SO2_TP_v1\Debug\SO2_TP_v1.pdb (Full PDB)
+c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\so2_tp_v1\servidor.c(31): warning C4047: 'function': 'LPDWORD' differs in levels of indirection from 'HANDLE *'
+c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\so2_tp_v1\servidor.c(31): warning C4024: 'CreateThread': different types for formal and actual parameter 6
+  SO2_TP_v1.vcxproj -> C:\Users\franc\Documents\Visual Studio 2015\Projects\SO2_TP_v1\Debug\SO2_TP_v1.exe
+  SO2_TP_v1.vcxproj -> C:\Users\franc\Documents\Visual Studio 2015\Projects\SO2_TP_v1\Debug\SO2_TP_v1.pdb (Full PDB)
