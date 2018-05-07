@@ -63,8 +63,6 @@ typedef struct {
 	int tipoComportamento;//numero de naves com este tipo talvez? ou porcoes
 	int frequenciaDisparo;
 	int numVidasJog;//numero de vidas para cada jogador?
-
-
 }jogo;
 
 typedef struct {
@@ -85,6 +83,8 @@ typedef struct {
 
 
 }bombas;
+
+//estrutura dos dados do campo
 
 //threads para o jogo
 //threads para cada jogador

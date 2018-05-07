@@ -10,6 +10,8 @@ int _tmain(int argc, TCHAR * argv[]) {
 	FILETIME tempoFicheiro;
 	ULARGE_INTEGER tempoInicio;
 
+	int opcao;
+
 	#ifdef UNICODE
 		_setmode(_fileno(stdin), _O_WTEXT);
 		_setmode(_fileno(stdout), _O_WTEXT);
@@ -28,11 +30,43 @@ int _tmain(int argc, TCHAR * argv[]) {
 
 	_tprintf(TEXT("\nTempo do Sistema:H = %02d M = %02d S = %02d ms = %02d \n"), tempoSistema.wHour, tempoSistema.wMinute, tempoSistema.wSecond, tempoSistema.wMilliseconds);
 	
-	temporizador = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)ThreadTemporizador, NULL, 0, &temporizador);
-	WaitForSingleObject(temporizador, INFINITE);
+	opcao = menu();
+	_tprintf(TEXT("Valor da opçao = %d"), opcao);
+	if (opcao == 1) {
+		//iniciaDados();//falta verificacao de ja foram configurados ou nao
+	}
+
+
+
+
+	//temporizador = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)ThreadTemporizador, NULL, 0, &temporizador);
+	//WaitForSingleObject(temporizador, INFINITE);
 	_tprintf(TEXT("\nVou libertar a thread, xau\n"));
 	//free(temporizador); era preciso caso fosse um ponteiro
 	return 0;
+}
+
+void iniciaDados() {
+
+	
+}
+
+int menu() {
+	int opcao;
+	int retorno = 0;
+	_tprintf(TEXT("\nMenu Principal\nOpções:\n 1 - Configurar Campo\n2 - Jogar Single Player\n3 - Jogar Multiplayer\n4 - Sair\n"));
+	_tprintf(TEXT("Opção: "));
+	do {
+		retorno = _tscanf_s(TEXT("%d"), &opcao);
+		if (opcao < 1 || opcao > 4 || retorno != 1) {
+			_tprintf(TEXT("\nValor Invalido, insira novamente: "));
+			fseek(stdin, 0, SEEK_END);//hacks btw xD
+			//falta resolver o decimal
+		}
+	} while (opcao < 1 || opcao > 4);
+
+	return opcao;
+
 }
 
 
