@@ -28,7 +28,6 @@ typedef struct {
 	HANDLE *threadID;//duvidas aqui, nao sei se os jogadores sao com handles
 	tamanhoPosicao tamPosNave;
 
-
 }navesDefensoras;
 
 typedef struct {
@@ -40,7 +39,6 @@ typedef struct {
 	HANDLE *threadID;
 	tamanhoPosicao tamPosNave;
 
-
 }navesInvasoras;
 
 typedef struct {
@@ -50,7 +48,6 @@ typedef struct {
 	HANDLE *threadPW;//threadsPowerups
 	tamanhoPosicao tamPosPowerup;
 
-
 }powerup;
 
 
@@ -59,10 +56,13 @@ typedef struct {
 	int dimY;//dimensao em y
 	int nivel;//talvez va funcionar como factor de multiplicacao para os elementos abaixo
 	int nNavesInvasoras;
+	int nNavesDefensoras;
+	int powerups;
 	int speed;//numero de naves com este tipo talvez? ou porcoes
 	int tipoComportamento;//numero de naves com este tipo talvez? ou porcoes
 	int frequenciaDisparo;
 	int numVidasJogo;//numero de vidas para cada jogador?
+
 }jogo;
 
 typedef struct {
@@ -70,7 +70,6 @@ typedef struct {
 	int posX;
 	int posY;
 	TCHAR direcao;//N para Norte S para Sul
-
 
 }tiros;
 
@@ -80,7 +79,6 @@ typedef struct {
 	int posX;
 	int posY;
 	TCHAR direcao;//N para Norte S para Sul
-
 
 }bombas;
 
