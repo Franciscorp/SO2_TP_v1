@@ -50,6 +50,7 @@ typedef struct {
 	HANDLE *threadPW;//threadsPowerups
 	tamanhoPosicao tamPosPowerup;
 
+
 }powerup;
 
 
@@ -61,7 +62,7 @@ typedef struct {
 	int speed;//numero de naves com este tipo talvez? ou porcoes
 	int tipoComportamento;//numero de naves com este tipo talvez? ou porcoes
 	int frequenciaDisparo;
-	int numVidasJog;//numero de vidas para cada jogador?
+	int numVidasJogo;//numero de vidas para cada jogador?
 }jogo;
 
 typedef struct {
@@ -69,6 +70,7 @@ typedef struct {
 	int posX;
 	int posY;
 	TCHAR direcao;//N para Norte S para Sul
+
 
 }tiros;
 
@@ -82,22 +84,7 @@ typedef struct {
 
 }bombas;
 
-
-//identificador de id's
-//0 - Vazio
-//1 - Defensor
-//2 - Invasor
-//3 - Powerup
-//4 - tiro
-//5 - bomba
-
-typedef struct {
-	int ID;//identifica quem está nesta posicao
-	int numID;//identifica o id dentro do id. ex: inimigo com o id 233
-}posCampo;
-
-//o campo tera sempre este tamanho
-posCampo campo[800][600];
+//estrutura dos dados do campo
 
 //threads para o jogo
 //threads para cada jogador

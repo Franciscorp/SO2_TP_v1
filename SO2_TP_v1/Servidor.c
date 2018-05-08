@@ -26,14 +26,27 @@ int _tmain(int argc, TCHAR * argv[]) {
 	tempoInicio.LowPart = tempoFicheiro.dwLowDateTime;
 
 	system("cls");
-	_tprintf(TEXT("Bem vindo ao Space Invaders!\n"));
+	_tprintf(TEXT("***** SPACE INVADERS *****\n"));
 
-	_tprintf(TEXT("\nTempo do Sistema:H = %02d M = %02d S = %02d ms = %02d \n"), tempoSistema.wHour, tempoSistema.wMinute, tempoSistema.wSecond, tempoSistema.wMilliseconds);
+	_tprintf(TEXT("\nTempo do Sistema: %02dh  %02dm %02ds  %02dms \n"), tempoSistema.wHour, tempoSistema.wMinute, tempoSistema.wSecond, tempoSistema.wMilliseconds);
 	
 	opcao = menu();
-	_tprintf(TEXT("Valor da opçao = %d"), opcao);
-	if (opcao == 1) {
-		//iniciaDados();//falta verificacao de ja foram configurados ou nao
+
+	//_tprintf(TEXT("Valor da opçao = %d"), opcao);
+	
+
+	switch (opcao){
+	
+		case 1: iniciaDados(); 
+		break;
+
+		case 2:
+
+		case 3:
+
+		case 4:
+
+		default: _tprintf(TEXT("Opcao invalida!\n"));
 	}
 
 
@@ -46,16 +59,45 @@ int _tmain(int argc, TCHAR * argv[]) {
 	return 0;
 }
 
-void iniciaDados() {
+void configuraJogo() {
+	
+	jogo j;
+
+
+	_tprintf(TEXT("Largura: "));
+	_tscanf_s(TEXT("%d"), &jogo.dimX);
+	
+	_tprintf(TEXT("Altura: "));
+	_tscanf_s(TEXT("%d"), &jogo.dimY);
+
+	_tprintf(TEXT("Naves inimigas: "));
+	_tscanf_s(TEXT("%d"), &campo.larg);
+
+	_tprintf(TEXT("Powerups: "));
+	_tscanf_s(TEXT("%d"), &campo.larg);
+
+	_tprintf(TEXT("naves Invasoras: "));
+	_tscanf_s(TEXT("%d"), &jogo.nNavesInvasoras);
+
+	_tprintf(TEXT("Numero de vidas: "));
+	_tscanf_s(TEXT("%d"), &jogo.numVidasJogo);
 
 	
+}
+
+
+void iniciaDados() {
+
+
+
 }
 
 int menu() {
 	int opcao;
 	int retorno = 0;
-	_tprintf(TEXT("\nMenu Principal\nOpções:\n 1 - Configurar Campo\n2 - Jogar Single Player\n3 - Jogar Multiplayer\n4 - Sair\n"));
+	_tprintf(TEXT("\n1 - Configurar Campo\n2 - Jogar Single Player\n3 - Jogar Multiplayer\n4 - Sair\n"));
 	_tprintf(TEXT("Opção: "));
+
 	do {
 		retorno = _tscanf_s(TEXT("%d"), &opcao);
 		if (opcao < 1 || opcao > 4 || retorno != 1) {
@@ -66,7 +108,6 @@ int menu() {
 	} while (opcao < 1 || opcao > 4);
 
 	return opcao;
-
 }
 
 
@@ -76,6 +117,7 @@ DWORD WINAPI ThreadTemporizador(LPVOID param) {
 
 	srand((int)time(&tempo));
 	_tprintf(TEXT("\nThread de 20 a 30\n"));
+	
 	while (i < 10) {
 		random = (rand() % 10) + 20;
 		random = random * 1000;
@@ -83,7 +125,8 @@ DWORD WINAPI ThreadTemporizador(LPVOID param) {
 		_tprintf(TEXT("\nCriei um powerup\nTempo = %d\n"), random);
 		i++;
 	}
+	
 	_tprintf(TEXT("\nAcabei a thread, vou encerrar\n"));
+	
 	return 0;
-
 }
