@@ -50,7 +50,6 @@ typedef struct {
 	HANDLE *threadPW;//threadsPowerups
 	tamanhoPosicao tamPosPowerup;
 
-
 }powerup;
 
 
@@ -71,7 +70,6 @@ typedef struct {
 	int posY;
 	TCHAR direcao;//N para Norte S para Sul
 
-
 }tiros;
 
 typedef struct {
@@ -84,7 +82,22 @@ typedef struct {
 
 }bombas;
 
-//estrutura dos dados do campo
+
+//identificador de id's
+//0 - Vazio
+//1 - Defensor
+//2 - Invasor
+//3 - Powerup
+//4 - tiro
+//5 - bomba
+
+typedef struct {
+	int ID;//identifica quem está nesta posicao
+	int numID;//identifica o id dentro do id. ex: inimigo com o id 233
+}posCampo;
+
+//o campo tera sempre este tamanho
+posCampo campo[800][600];
 
 //threads para o jogo
 //threads para cada jogador
