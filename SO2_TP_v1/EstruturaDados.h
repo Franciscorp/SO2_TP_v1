@@ -1,4 +1,4 @@
-#define _UNICODE//tem haver com outras bibliotecas que vao buscar esta
+ï»¿#define _UNICODE//tem haver com outras bibliotecas que vao buscar esta
 #define UNICODE//por as duas pelo sim pelo nao
 #include <time.h>
 #include <windows.h>
@@ -12,7 +12,7 @@
 
 
 typedef struct {
-	int posX;//canto superior esquerdo do qual começa a posicao
+	int posX;//canto superior esquerdo do qual comeÃ§a a posicao
 	int posY;
 	int larg;//largura
 	int alt;//altura
@@ -42,7 +42,7 @@ typedef struct {
 }navesInvasoras;
 
 typedef struct {
-	int IDPowerup;//identifica qual é o powerup
+	int IDPowerup;//identifica qual Ã© o powerup
 	int IDTipo;//identifica o tipo do powerup
 	int speed;//nao sei se e preciso aqui
 	HANDLE *threadPW;//threadsPowerups
@@ -81,6 +81,23 @@ typedef struct {
 	TCHAR direcao;//N para Norte S para Sul
 
 }bombas;
+
+
+//identificador de id's
+//0 - Vazio
+//1 - Defensor
+//2 - Invasor
+//3 - Powerup
+//4 - tiro
+//5 - bomba
+
+typedef struct {
+	int ID;//identifica quem esta nesta posicao
+	int numID;//identifica o id dentro do id. ex: inimigo com o id 233
+}posCampo;
+
+//o campo tera sempre este tamanho
+posCampo campo[800][600];
 
 //estrutura dos dados do campo
 

@@ -90,17 +90,15 @@ void configuraJogo() {
 
 void iniciaDados() {
 
-	tamanhoPosicao t;
 	jogo j;
 
-	t.posX = 0;
-	t.posY = 0;
-	t.alt = 30;
-	t.larg = 50;
-
+	j.dimX = 800;
+	j.dimY = 600;
+	j.nivel = 1;
+	j.powerups = 4;//4 ao mesmo tempo?
 	j.nNavesDefensoras = 5;
 	j.nNavesInvasoras = 15;
-	j.frequenciaDisparo = 20; //ms
+	j.frequenciaDisparo = 80; //ms
 	j.speed = 50; //nao sei se estes valores estao certos, só experimentando no jogo depois
 	j.numVidasJogo = 3;
 
