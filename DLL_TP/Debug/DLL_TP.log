@@ -1,0 +1,10 @@
+﻿  DLL.cpp
+c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\dll_tp\dll.cpp(6): warning C4273: 'nDLL': inconsistent dll linkage
+  c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\dll_tp\dll.h(30): note: see previous definition of 'nDLL'
+c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\dll_tp\dll.cpp(8): warning C4273: 'UmaString': inconsistent dll linkage
+  c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\dll_tp\dll.h(32): note: see previous definition of 'UmaString'
+c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\dll_tp\dll.cpp(18): warning C4273: 'soma': inconsistent dll linkage
+  c:\users\franc\documents\visual studio 2015\projects\so2_tp_v1\dll_tp\dll.h(33): note: see previous definition of 'soma'
+     Creating library C:\Users\franc\Documents\Visual Studio 2015\Projects\SO2_TP_v1\Debug\DLL_TP.lib and object C:\Users\franc\Documents\Visual Studio 2015\Projects\SO2_TP_v1\Debug\DLL_TP.exp
+  DLL_TP.vcxproj -> C:\Users\franc\Documents\Visual Studio 2015\Projects\SO2_TP_v1\Debug\DLL_TP.dll
+  DLL_TP.vcxproj -> C:\Users\franc\Documents\Visual Studio 2015\Projects\SO2_TP_v1\Debug\DLL_TP.pdb (Full PDB)

@@ -1,6 +1,8 @@
 #include "EstruturaDados.h"
 
 
+int soma(int x, int y);
+
 int _tmain(int argc, TCHAR * argv[]) {
 
 	HANDLE temporizador = NULL;
@@ -27,6 +29,7 @@ int _tmain(int argc, TCHAR * argv[]) {
 
 	system("cls");
 	_tprintf(TEXT("***** SPACE INVADERS *****\n"));
+	_tprintf(TEXT("resultado soma %d"),soma(4, 5));
 
 	_tprintf(TEXT("\nTempo do Sistema: %02dh  %02dm %02ds  %02dms \n"), tempoSistema.wHour, tempoSistema.wMinute, tempoSistema.wSecond, tempoSistema.wMilliseconds);
 	
@@ -88,7 +91,7 @@ void configuraJogo() {
 }
 
 
-void iniciaDados() {
+int iniciaDados() {
 
 	jogo j;
 
@@ -101,7 +104,7 @@ void iniciaDados() {
 	j.frequenciaDisparo = 80; //ms
 	j.speed = 50; //nao sei se estes valores estao certos, só experimentando no jogo depois
 	j.numVidasJogo = 3;
-
+	return 1;
 }
 
 int menu() {
