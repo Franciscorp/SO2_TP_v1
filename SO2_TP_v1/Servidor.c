@@ -64,32 +64,31 @@ void configuraJogo() {
 	jogo j;
 
 
-	_tprintf(TEXT("Numero de vidas: "));
-	_tscanf_s(TEXT("%d"), &j.numVidasJogo);
-
-	_tprintf(TEXT("Naves Invasoras: "));
-	_tscanf_s(TEXT("%d"), &j.nNavesInvasoras);
-
-	_tprintf(TEXT("Naves Defensoras: "));
-	_tscanf_s(TEXT("%d"), &j.nNavesDefensoras);
+	_tprintf(TEXT("Largura: "));
+	_tscanf_s(TEXT("%d"), &jogo.dimX);
 	
-	_tprintf(TEXT("Powerups: "));
-	_tscanf_s(TEXT("%d"), &j.powerups);
+	_tprintf(TEXT("Altura: "));
+	_tscanf_s(TEXT("%d"), &jogo.dimY);
+
+	_tprintf(TEXT("Naves inimigas: "));
+	_tscanf_s(TEXT("%d"), &campo.larg);
 
 	_tprintf(TEXT("Powerups: "));
-	_tscanf_s(TEXT("%d"), &j.powerups);
+	_tscanf_s(TEXT("%d"), &campo.larg);
 
-	_tprintf(TEXT("Velocidade (ms): "));
-	_tscanf_s(TEXT("%d"), &j.speed);
+	_tprintf(TEXT("naves Invasoras: "));
+	_tscanf_s(TEXT("%d"), &jogo.nNavesInvasoras);
 
-	_tprintf(TEXT("Frequencia de disparo (ms): "));
-	_tscanf_s(TEXT("%d"), &j.frequenciaDisparo);
+	_tprintf(TEXT("Numero de vidas: "));
+	_tscanf_s(TEXT("%d"), &jogo.numVidasJogo);
 
+	
 }
 
 
 void iniciaDados() {
 
+<<<<<<< HEAD
 	jogo j;
 
 	j.dimX = 800;
@@ -101,6 +100,9 @@ void iniciaDados() {
 	j.frequenciaDisparo = 80; //ms
 	j.speed = 50; //nao sei se estes valores estao certos, só experimentando no jogo depois
 	j.numVidasJogo = 3;
+=======
+
+>>>>>>> parent of 8fcedcc... tooo v2.0
 
 }
 
