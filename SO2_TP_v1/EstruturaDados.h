@@ -53,17 +53,26 @@ typedef struct {
 
 }powerup;
 
-
 typedef struct {
-	int dimX;//dimensao em x
-	int dimY;//dimensao em y
+
 	int nivel;//talvez va funcionar como factor de multiplicacao para os elementos abaixo
 	int nNavesInvasoras;
 	int speed;//numero de naves com este tipo talvez? ou porcoes
 	int tipoComportamento;//numero de naves com este tipo talvez? ou porcoes
 	int frequenciaDisparo;
 	int numVidasJogo;//numero de vidas para cada jogador?
-}jogo;
+
+//macgab
+	int ID; //identifica quem esta nesta posicao
+	int numID; //identifica o id dentro do id. ex: inimigo com o id 233
+	int tamX;
+	int tamY;
+	int campo[800][600];
+
+
+} jogo;
+
+
 
 typedef struct {
 	int IDOrigem;//nave que o dispara caso seja defensora, senao esta a 0
@@ -98,8 +107,6 @@ typedef struct {
 	int numID;//identifica o id dentro do id. ex: inimigo com o id 233
 }posCampo;
 
-//o campo tera sempre este tamanho
-posCampo campo[800][600];
 
 //estrutura dos dados do campo
 
