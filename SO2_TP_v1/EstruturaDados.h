@@ -9,12 +9,7 @@
 #include <fcntl.h>
 //#define _CRT_SECURE_NO_WARNINGS
 
-<<<<<<< HEAD
-//teste FRP
-=======
 
-//MINHA ALTERAÇAO
->>>>>>> Macgab
 
 typedef struct {
 	int posX;//canto superior esquerdo do qual começa a posicao
@@ -33,7 +28,6 @@ typedef struct {
 	HANDLE *threadID;//duvidas aqui, nao sei se os jogadores sao com handles
 	tamanhoPosicao tamPosNave;
 
-
 }navesDefensoras;
 
 typedef struct {
@@ -45,7 +39,6 @@ typedef struct {
 	HANDLE *threadID;
 	tamanhoPosicao tamPosNave;
 
-
 }navesInvasoras;
 
 typedef struct {
@@ -55,34 +48,56 @@ typedef struct {
 	HANDLE *threadPW;//threadsPowerups
 	tamanhoPosicao tamPosPowerup;
 
-
 }powerup;
 
 
+
+//identificador de id's
+//0 - Vazio
+//1 - Defensor
+//2 - Invasor
+//3 - Powerup
+//4 - tiro
+//5 - bomba
+
 typedef struct {
-	int dimX;//dimensao em x
-	int dimY;//dimensao em y
+
 	int nivel;//talvez va funcionar como factor de multiplicacao para os elementos abaixo
 	int nNavesInvasoras;
+	int nNavesDefensoras;
+	int powerups;
 	int speed;//numero de naves com este tipo talvez? ou porcoes
 	int tipoComportamento;//numero de naves com este tipo talvez? ou porcoes
 	int frequenciaDisparo;
-	int numVidasJog;//numero de vidas para cada jogador?
+	int numVidasJogo;//numero de vidas para cada jogador?
+	int ID; //identifica quem esta nesta posicao
+	int numID; //identifica o id dentro do id. ex: inimigo com o id 233
+	int tamX;
+	int tamY;
+	int campo[800][600];
+	
 
-
-}jogo;
+} jogo;
 
 typedef struct {
-
-
+	int IDOrigem;//nave que o dispara caso seja defensora, senao esta a 0
+	int posX;
+	int posY;
+	TCHAR direcao;//N para Norte S para Sul
 
 }tiros;
 
 typedef struct {
-
-
+	int IDOrigem;//nave que o dispara caso seja defensora, senao esta a 0
+	int tipoBomba;//identifica o tipo de bomba que e
+	int posX;
+	int posY;
+	TCHAR direcao;//N para Norte S para Sul
 
 }bombas;
+
+jogo j;
+
 
 //threads para o jogo
 //threads para cada jogador
@@ -90,6 +105,8 @@ typedef struct {
 //threads bombas
 //thread geracaoPowerup e movimentoPowerup?
 //threads navesInvasoras talvez baseada em cada tipo?
+//thread temporizacao
 
 //variaveis globais
+
 

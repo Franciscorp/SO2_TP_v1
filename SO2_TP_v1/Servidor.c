@@ -1,6 +1,100 @@
 #include "EstruturaDados.h"
 
 
+
+void iniciaDados() {
+
+	j.nivel = 1;
+	j.powerups = 4; //4 ao mesmo tempo?
+	j.nNavesDefensoras = 5;
+	j.nNavesInvasoras = 15;
+	j.frequenciaDisparo = 80; //ms
+	j.speed = 50; //nao sei se estes valores estao certos, só experimentando no jogo depois
+	j.numVidasJogo = 3;
+	j.tamX = 20;
+	j.tamY = 50;
+
+}
+
+
+void configuraJogo() {
+
+	_tprintf(TEXT("Numero de vidas: "));
+	_tscanf_s(TEXT("%d"), &j.numVidasJogo);
+
+	_tprintf(TEXT("Naves Invasoras: "));
+	_tscanf_s(TEXT("%d"), &j.nNavesInvasoras);
+
+	_tprintf(TEXT("Naves Defensoras: "));
+	_tscanf_s(TEXT("%d"), &j.nNavesDefensoras);
+
+	_tprintf(TEXT("Powerups: "));
+	_tscanf_s(TEXT("%d"), &j.powerups);
+
+	_tprintf(TEXT("Velocidade (ms): "));
+	_tscanf_s(TEXT("%d"), &j.speed);
+
+	_tprintf(TEXT("Frequencia de disparo (ms): "));
+	_tscanf_s(TEXT("%d"), &j.frequenciaDisparo);
+
+}
+
+
+void criaCampo() {
+
+	//_tprintf(TEXT("TamX: %d\n"), j.tamX);
+	//_tprintf(TEXT("TamY: %d"), j.tamY);
+
+	for (int i = 0; i < j.tamX; i++) {
+		for (int k = 0; k < j.tamY; k++) {
+
+			j.campo[i][k] = 0; //campo vazio
+
+			if (i%2 == 0 && j.tamY < 40)
+				j.campo[i][k] = 2;
+
+			if (i%2 == 0 && j.tamY == 70)
+				j.campo[i][k] = 1;
+			
+		}
+	}
+
+	for (int i = 0; i < j.tamX; i++) {
+		for (int k = 0; k < j.tamY; k++) {
+
+			_tprintf(TEXT("%d"), j.campo[i][k]);
+		}
+		_tprintf(TEXT("\n"));
+	}
+
+	getchar();
+	//return c;
+}
+
+
+int menu() {
+	int opcao;
+	int retorno = 0;
+	_tprintf(TEXT("\n1 - Configurar Campo\n2 - Jogar Single Player\n3 - Jogar Multiplayer\n4 - Sair\n"));
+	_tprintf(TEXT("Opção: "));
+
+	do {
+		retorno = _tscanf_s(TEXT("%d"), &opcao);
+		if (opcao < 1 || opcao > 4 || retorno != 1) {
+			_tprintf(TEXT("\nValor Invalido, insira novamente: "));
+			fseek(stdin, 0, SEEK_END);//hacks btw xD
+									  //falta resolver o decimal
+		}
+	} while (opcao < 1 || opcao > 4);
+
+	return opcao;
+}
+
+
+
+
+
+
 int _tmain(int argc, TCHAR * argv[]) {
 
 	HANDLE temporizador = NULL;
@@ -34,20 +128,22 @@ int _tmain(int argc, TCHAR * argv[]) {
 
 	//_tprintf(TEXT("Valor da opçao = %d"), opcao);
 	
+	do {
+		switch (opcao) {
 
-	switch (opcao){
-	
-		case 1: iniciaDados(); break;
+			case 1: configuraJogo(); break;
 
-		case 2:
+			case 2: iniciaDados();
+				    criaCampo();
+					break;
 
-		case 3:
+			case 3: break;
 
-		case 4:
+			case 4: break;
 
-		default: _tprintf(TEXT("Opcao invalida!\n"));
-	}
-
+			default: _tprintf(TEXT("Opcao invalida!\n"));
+		}
+	} while (opcao > 0 && opcao < 5);
 
 
 
@@ -56,71 +152,6 @@ int _tmain(int argc, TCHAR * argv[]) {
 	_tprintf(TEXT("\nVou libertar a thread, xau\n"));
 	//free(temporizador); era preciso caso fosse um ponteiro
 	return 0;
-}
-
-void configuraJogo() {
-	
-	jogo j;
-
-
-	_tprintf(TEXT("Numero de vidas: "));
-	_tscanf_s(TEXT("%d"), &j.numVidasJogo);
-
-	_tprintf(TEXT("Naves Invasoras: "));
-	_tscanf_s(TEXT("%d"), &j.nNavesInvasoras);
-
-	_tprintf(TEXT("Naves Defensoras: "));
-	_tscanf_s(TEXT("%d"), &j.nNavesDefensoras);
-	
-	_tprintf(TEXT("Powerups: "));
-	_tscanf_s(TEXT("%d"), &j.powerups);
-
-	_tprintf(TEXT("Powerups: "));
-	_tscanf_s(TEXT("%d"), &j.powerups);
-
-	_tprintf(TEXT("Velocidade (ms): "));
-	_tscanf_s(TEXT("%d"), &j.speed);
-
-	_tprintf(TEXT("Frequencia de disparo (ms): "));
-	_tscanf_s(TEXT("%d"), &j.frequenciaDisparo);
-
-}
-
-
-void iniciaDados() {
-
-	tamanhoPosicao t;
-	jogo j;
-
-	t.posX = 0;
-	t.posY = 0;
-	t.alt = 30;
-	t.larg = 50;
-
-	j.nNavesDefensoras = 5;
-	j.nNavesInvasoras = 15;
-	j.frequenciaDisparo = 20; //ms
-	j.speed = 50; //nao sei se estes valores estao certos, só experimentando no jogo depois
-	j.numVidasJogo = 3;
-
-}
-
-int menu() {
-	int opcao;
-	int retorno = 0;
-	_tprintf(TEXT("\n1 - Configurar Campo\n2 - Jogar Single Player\n3 - Jogar Multiplayer\n4 - Sair\n"));
-	_tprintf(TEXT("Opção: "));
-
-	do {
-		retorno = _tscanf_s(TEXT("%d"), &opcao);
-		if (opcao < 1 || opcao > 4 || retorno != 1) {
-			_tprintf(TEXT("\nValor Invalido, insira novamente: "));
-			fseek(stdin, 0, SEEK_END);//hacks btw xD
-			//falta resolver o decimal
-		}
-	} while (opcao < 1 || opcao > 4);
-
-	return opcao;
 }
 
 
